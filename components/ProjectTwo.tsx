@@ -88,7 +88,7 @@ const ProjectTwo = () => {
                 Projects
                 <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
             </h1>
-            <div className="w-full max-w-lg bg-white p-6 rounded-lg shadow-lg">
+            <div className="w-full  bg-white p-6 rounded-lg shadow-lg">
                 <div className="flex">
                     {tabContent.map((tab, index) => (
                         <button
@@ -104,29 +104,35 @@ const ProjectTwo = () => {
                 <div className="mt-4">
 
                     <h2 className="text-xl font-semibold my-8">{tabContent[activeTab].title}</h2>
+
                     {tabContent[activeTab].content.map((item, index) => (
-                        <div key={index} className="mt-2 my-8 flex ">
+                        <div key={index} className="mt-2 my-8 flex items-center justify-center"> {/* Center content vertically and horizontally */}
+
                             {/* ----------bloco imagem */}
-                            <div className="flex-auto w-32">
+                            <div className="w-32">
                                 <Image
                                     src={item.img}
                                     alt=""
                                     width={100}
                                     height={100}
-                                    className="hidden md:block md:relative"
+                                    className="hidden md:block md:relative mx-auto" // Center image horizontally
                                 />
                             </div>
+
                             {/* ----------bloco text */}
                             <div className="ml-2 flex-auto w-64 flex-col justify-center">
                                 <h3 className="font-semibold">{item.heading}</h3>
-                                <p className=" mb-2 text-neutral-600 dark:text-neutral-400">{item.Data} </p>
+                                <p className="mb-2 text-neutral-600 dark:text-neutral-400">{item.Data} </p>
                                 <p>{item.description}</p>
                                 <p>{item.tecnologia}</p>
                             </div>
 
                         </div>
                     ))}
+
                 </div>
+
+
             </div>
         </div>
     );
